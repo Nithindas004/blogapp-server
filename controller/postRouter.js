@@ -19,4 +19,12 @@ router.get("/view",async(req,res)=>{
     res.json(result)
 })
 
+router.post("/viewmypost",async(req,res)=>{
+    let uid=req.body
+    //console.log(uid)
+    let result=await postModel.find(uid)
+    //console.log(result)
+    res.json(result)
+})
+
 module.exports=router
